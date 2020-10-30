@@ -13,7 +13,8 @@ const EarlyPay: React.FC<Props> = ({ amountOfMoney }: Props) => {
         Итого можете внести в качестве досрочных:
       </label>
       <Checkbox
-        label={`78 000 рублей в 1-ый год`}
+        className={`early-pay__checkbox`}
+        label={`${amountOfMoney} рублей в 1-ый год`}
         prefix={`early-pay`}
       />
     </div>
