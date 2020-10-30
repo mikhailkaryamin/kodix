@@ -1,13 +1,14 @@
 import React from 'react';
 
 type Props = {
+  className?: string;
   label: string;
   prefix: string;
 }
 
-const Checkbox: React.FC<Props> = ({ label, prefix }: Props) => {
+const Checkbox: React.FC<Props> = ({ className, label, prefix }: Props) => {
   return (
-    <label className={`checkbox ${prefix ? `checkbox--${prefix}` : ``}`}>
+    <label className={`checkbox checkbox--${prefix} ${className ? `${className}` : ``}`}>
       {label}
       <input
         className="checkbox__input"
