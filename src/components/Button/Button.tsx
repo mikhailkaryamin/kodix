@@ -1,7 +1,7 @@
 import React from 'react';
 
 type Props = {
-  classNameEl?: string;
+  className?: string;
   isVisibleTitle: boolean;
   onClick: () => void;
   prefix: string;
@@ -10,11 +10,11 @@ type Props = {
 }
 
 const Button: React.FC<Props> = (
-    { isVisibleTitle, onClick, prefix, title, type = 'button', classNameEl }: Props
+    { isVisibleTitle, onClick, prefix, title, type = 'button', className }: Props
 ) => {
   return (
     <button
-      className={`button button--${prefix} ${classNameEl ? classNameEl : ``}`}
+      className={`button button--${prefix} ${className ? className : ``}`}
       onClick={onClick}
       type={type}
       title={title}
