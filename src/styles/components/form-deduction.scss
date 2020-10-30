@@ -1,0 +1,23 @@
+.form-deduction {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-start;
+  padding-top: 16px;
+}
+
+.form-deduction__title {
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.form-deduction__group-buttons {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.form-deduction__button-submit {
+  margin-top: auto;
+}

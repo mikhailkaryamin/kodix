@@ -19,12 +19,12 @@ const FormDeduction: React.FC = () => {
         type={'number'}
       />
       <EarlyPay
-        amountOfMoney={5000}
+        amountOfMoney={78000}
       />
       <strong className="form-deduction__title">
         Что уменьшаем?
       </strong>
-      <div className="form-deduction__button-group">
+      <div className="form-deduction__group-buttons">
         <Button
           isVisibleTitle={true}
           onClick={emptyFunc}
@@ -39,10 +39,12 @@ const FormDeduction: React.FC = () => {
         />
       </div>
       <Button
+        className={`form-deduction__button-submit`}
         isVisibleTitle={true}
         onClick={emptyFunc}
         prefix={`add`}
         title={`Добавить`}
+        type={`submit`}
       />
     </form>
   );
