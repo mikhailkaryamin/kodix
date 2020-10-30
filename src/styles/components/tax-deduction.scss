@@ -1,0 +1,53 @@
+@mixin line-button-close($rotate) {
+  content: "";
+  position: absolute;
+  top: 10px;
+  right: 4px;
+  transform: rotate($rotate);
+  width: 16px;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #ea0029;
+}
+
+.tax-deduction {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.tax-deduction__title {
+  margin-top: 16px;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+.tax-deduction__button-close-popup {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  &::before {
+    @include line-button-close(45deg);
+  }
+
+  &::after {
+    @include line-button-close(-45deg);
+  }
+}
+
+.tax-deduction__description {
+  margin: 0;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  color: #808080;
+  font-size: 12px;
+  line-height: 16px;
+}

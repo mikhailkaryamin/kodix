@@ -10,10 +10,11 @@ type Props = {
 const TaxDeduction: React.FC<Props> = ({ onClosePopup }: Props) => {
   return (
     <section className="tax-deduction">
-      <h1 className="tax-deduction__title tax-deduction__title--main">
+      <h1 className="tax-deduction__title">
         Налоговый вычет
       </h1>
       <Button
+        className={`tax-deduction__button-close-popup`}
         isVisibleTitle={false}
         onClick={onClosePopup}
         prefix={`close-popup`}
