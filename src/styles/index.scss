@@ -1,4 +1,9 @@
+// Base
+@import "./variables.scss";
+@import "./mixins.scss";
 @import "./base.scss";
+
+// Components
 @import "./components/checkbox.scss";
 @import "./components/early-pay.scss";
 @import "./components/input.scss";
