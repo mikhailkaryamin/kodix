@@ -7,18 +7,41 @@
 }
 
 .form-deduction__title {
-  @include font-middle;
+  @include font-middle-mob;
   margin-bottom: 8px;
   font-weight: 500;
+
+  @media (min-width: $tablet-width) {
+    @include font-middle-tab;
+  }
 }
 
 .form-deduction__sum {
   margin-bottom: 16px;
 }
 
+.form-deduction__container-decrease {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: baseline;
+    margin-bottom: 40px;
+  }
+}
+
 .form-deduction__group-buttons {
   padding-top: 24px;
   padding-bottom: 24px;
+
+  @media (min-width: $tablet-width) {
+    margin-left: auto;
+    padding: 0;
+    padding-right: 55px;
+  }
 }
 
 .form-deduction__button-pay {
