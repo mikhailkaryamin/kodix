@@ -17,11 +17,10 @@
 }
 
 .tax-deduction__title {
+  @include font-large;
   margin-top: 16px;
   margin-bottom: 8px;
-  font-size: 18px;
   font-weight: 500;
-  line-height: 24px;
 }
 
 .tax-deduction__button-close-popup {
@@ -44,10 +43,9 @@
 }
 
 .tax-deduction__description {
+  @include font-small;
   margin: 0;
   padding-top: 8px;
   padding-bottom: 8px;
   color: #808080;
-  font-size: 12px;
-  line-height: 16px;
 }

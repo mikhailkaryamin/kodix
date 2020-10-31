@@ -1,7 +1,6 @@
 .early-pay {
-  font-size: 14px;
+  @include font-middle;
   font-weight: 500;
-  line-height: 24px;
 }
 
 .early-pay__label {
@@ -12,5 +11,6 @@
   width: 100%;
   padding-top: 16px;
   padding-bottom: 16px;
+  font-weight: 400;
   border-bottom: 1px solid #dfe3e6;
 }
