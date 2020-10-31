@@ -13,22 +13,25 @@ const FormDeduction: React.FC = () => {
         Ваша зарплата в месяц
       </label>
       <Input
+        className={'form-deduction__sum'}
+        isRequired={true}
         name={'salary'}
-        prefix={'form-deduction'}
         placeHolder={'Введите данные'}
         type={'number'}
       />
       <EarlyPay
-        amountOfMoney={78000}
+        sum={78000}
+        year={1}
       />
       <strong className="form-deduction__title">
         Что уменьшаем?
       </strong>
       <div className="form-deduction__group-buttons">
         <Button
+          className={`form-deduction__button-pay`}
           isVisibleTitle={true}
           onClick={emptyFunc}
-          prefix={`decrease`}
+          prefix={`decrease button--decrease-active`}
           title={`Платёж`}
         />
         <Button
