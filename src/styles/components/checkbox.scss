@@ -1,11 +1,10 @@
 .checkbox {
+  @include font-middle;
   position: relative;
   display: block;
   margin-bottom: 12px;
   padding-right: 5px;
   padding-left: 35px;
-  font-size: 14px;
-  line-height: 24px;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -21,9 +20,13 @@
   cursor: pointer;
 }
 
+.checkbox__year {
+  color: #808080;
+}
+
 .checkbox__icon {
   position: absolute;
-  top: 16px;
+  top: 18px;
   left: 0;
   width: 20px;
   height: 20px;
@@ -38,12 +41,11 @@
 
 .checkbox input:checked ~ .checkbox__icon {
   border: none;
-  background: linear-gradient(
-    255.35deg, 
-    #DC3131 0.83%, 
-    rgba(255, 79, 79, 0) 
-    108.93%),
-    #FF5E56;
+  background: $gradient-red;
+}
+
+.checkbox input:disabled ~ .checkbox__icon {
+  background: #bec5cc;
 }
 
 .checkbox__icon:after {
@@ -65,5 +67,5 @@
   width: 6px;
   height: 12px;
   border: solid white;
-  border-width: 0 3px 3px 0;
+  border-width: 0 2px 2px 0;
 }
