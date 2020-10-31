@@ -1,16 +1,18 @@
 import React from 'react';
 
 type Props = {
+  children: JSX.Element;
+  isDisabled: boolean;
   className?: string;
-  label: string;
   prefix: string;
 }
 
-const Checkbox: React.FC<Props> = ({ className, label, prefix }: Props) => {
+const Checkbox: React.FC<Props> = ({ children, isDisabled, className, prefix }: Props) => {
   return (
     <label className={`checkbox checkbox--${prefix} ${className ? `${className}` : ``}`}>
-      {label}
+      {children}
       <input
+        disabled={isDisabled}
         className="checkbox__input"
         type="checkbox"
       />
