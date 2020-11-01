@@ -61,10 +61,10 @@ const getShortDeductionList = (deductionList: number[], cb: (evt: React.MouseEve
           isDisabled={false}
           className={`early-pay__checkbox`}
           onClick={cb}
-          prefix={`early-pay`}
+          prefix={`button-load-more`}
           type={`button`}
         >
-          <span>...</span>
+          <span>Показать остальные</span>
         </Checkbox>
       );
     }
@@ -74,7 +74,6 @@ const getShortDeductionList = (deductionList: number[], cb: (evt: React.MouseEve
         key={el}
         isDisabled={false}
         className={`early-pay__checkbox`}
-        prefix={`early-pay`}
       >
         {getLabelCheckbox(deductionList[el], el)}
       </Checkbox>
@@ -102,7 +101,6 @@ const EarlyPay: React.FC<Props> = ({ deductionList }: Props) => {
               key={`${deduction}-${i}`}
               isDisabled={false}
               className={`early-pay__checkbox`}
-              prefix={`early-pay`}
             >
               {getLabelCheckbox(deduction, i)}
             </Checkbox>
@@ -112,8 +110,6 @@ const EarlyPay: React.FC<Props> = ({ deductionList }: Props) => {
       {isShortList && (
         getShortDeductionList(deductionList, () => setOpenList(true))
       )}
-
-      {/* setOpenList(false) */}
     </div>
   );
 };

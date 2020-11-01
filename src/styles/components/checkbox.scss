@@ -2,7 +2,6 @@
   @include font-middle-mob;
   position: relative;
   display: block;
-  margin-bottom: 12px;
   padding-right: 5px;
   padding-left: 35px;
   cursor: pointer;
@@ -10,6 +9,15 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  &--button-load-more {
+    padding-left: 0;
+    text-align: center;
+
+    &:hover {
+      color: #ea0029;
+    }
+  }
 }
 
 .checkbox__input {
@@ -33,6 +41,10 @@
   border: 1px solid #dfe3e6;
   border-radius: 6px;
   background-color: transparent;
+
+  &--button-load-more {
+    display: none;
+  }
 }
 
 .checkbox:hover input ~ .checkbox__icon {
