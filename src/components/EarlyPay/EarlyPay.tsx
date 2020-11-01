@@ -59,7 +59,7 @@ const getShortDeductionList = (deductionList: number[], cb: (evt: React.MouseEve
         <Checkbox
           key={el}
           isDisabled={false}
-          className={`early-pay__checkbox`}
+          className={`early-pay__checkbox early-pay__checkbox--button`}
           onClick={cb}
           prefix={`button-load-more`}
           type={`button`}

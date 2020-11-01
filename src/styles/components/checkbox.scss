@@ -9,15 +9,6 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-
-  &--button-load-more {
-    padding-left: 0;
-    text-align: center;
-
-    &:hover {
-      color: #ea0029;
-    }
-  }
 }
 
 .checkbox__input {
