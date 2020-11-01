@@ -1,9 +1,8 @@
 .main {
   display: flex;
-  width: 100vw;
-  height: 100vh;
 
   &--start {
+    height: 100vh;
     background: $gradient-red;
   }
 
@@ -19,6 +18,7 @@
   @media (min-width: $tablet-width) {
     display: block;
     padding-top: 120px;
+    padding-bottom: 120px;
   }
 }
 

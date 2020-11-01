@@ -29,10 +29,13 @@ html {
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
   margin: 0;
   font-family: $font-family;
   color: #000000;
   font-style: normal;
+  word-wrap: break-word;
+
+  @media (min-width: $tablet-width) {
+    background-color: #b3b3b3;
+  }
 }

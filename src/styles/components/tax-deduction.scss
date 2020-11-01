@@ -25,12 +25,18 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  width: 320px;
   padding: 16px;
 
   @media (min-width: $tablet-width) {
+    width: 455px;
     padding: 32px;
     border-radius: 30px;
     background-color: #ffffff;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 555px;
   }
 }
 
