@@ -5,7 +5,7 @@ type Props = {
   isDisabled: boolean;
   className?: string;
   onClick?: (evt: React.MouseEvent) => void;
-  prefix: string;
+  prefix?: string;
   type?: string;
 }
 
@@ -15,7 +15,9 @@ const Checkbox: React.FC<Props> = (
     { children, isDisabled, className, onClick = onEmptyFunc, prefix, type = `checkbox` }: Props
 ) => {
   return (
-    <label className={`checkbox checkbox--${prefix} ${className ? `${className}` : ``}`}>
+    <label
+      className={`checkbox ${prefix ? `checkbox--${prefix}` : ``} ${className ? `${className}` : ``}`}
+    >
       {children}
       <input
         disabled={isDisabled}
