@@ -5,13 +5,14 @@ type Props = {
   isDisabled?: boolean;
   isRequired?: boolean;
   name: string;
+  onChange: (evt: React.ChangeEvent<HTMLInputElement>) => void;
   prefix?: string;
   placeHolder?: string;
   type: string;
 }
 
 const Input: React.FC<Props> = ({
-  className, isDisabled = false, name, placeHolder, prefix, isRequired = false, type
+  className, isDisabled = false, isRequired = false, name, onChange, placeHolder, prefix, type
 }: Props) => {
   return (
     <input
@@ -19,6 +20,7 @@ const Input: React.FC<Props> = ({
       disabled={isDisabled}
       id={name}
       name={name}
+      onChange={onChange}
       placeholder={`${placeHolder ? `${placeHolder}` : ``}`}
       required={isRequired}
       type={type}
