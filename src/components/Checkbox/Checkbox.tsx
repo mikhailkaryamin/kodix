@@ -4,17 +4,24 @@ type Props = {
   children: JSX.Element;
   isDisabled: boolean;
   className?: string;
+  onClick?: (evt: React.MouseEvent) => void;
   prefix: string;
+  type?: string;
 }
 
-const Checkbox: React.FC<Props> = ({ children, isDisabled, className, prefix }: Props) => {
+const onEmptyFunc = () => ``;
+
+const Checkbox: React.FC<Props> = (
+    { children, isDisabled, className, onClick = onEmptyFunc, prefix, type = `checkbox` }: Props
+) => {
   return (
     <label className={`checkbox checkbox--${prefix} ${className ? `${className}` : ``}`}>
       {children}
       <input
         disabled={isDisabled}
         className="checkbox__input"
-        type="checkbox"
+        onClick={onClick}
+        type={type}
       />
       <span className={`checkbox__icon ${prefix ? `checkbox__icon--${prefix}` : ``}`}></span>
     </label>
