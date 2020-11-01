@@ -1,14 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Checkbox from '../Checkbox/Checkbox';
 
 type Props = {
-  sum: number;
-  year: number;
+  deductionList: number[];
 }
 
 const PREFIX_YEARS = [
-  ``,
   `в 1-ый год`,
   `во 2-ой год`,
   `в 3-ий год`,
@@ -24,19 +22,23 @@ const PREFIX_YEARS = [
   `в 13-ый год`,
   `в 14-ый год`,
   `в 15-ый год`,
+  `в 16-ый год`,
+  `в 17-ый год`,
+  `в 18-ый год`,
+  `в 19-ый год`,
 ];
 
-const format = (sum: number) => {
-  return sum
+const format = (deduction: number) => {
+  return deduction
   .toString()
   .replace(/(?!^)(?=(?:\d{3})+(?:\.|$))/gm, ' ');
 };
 
-const getLabelCheckbox = (sum: number, year: number) => {
+const getLabelCheckbox = (deduction: number, year: number) => {
   return (
     <>
       <span className="checkbox__sum">
-        {`${format(sum)} рублей `}
+        {`${format(deduction)} рублей `}
       </span>
       <span className="checkbox__year">
         {PREFIX_YEARS[year]}
@@ -45,19 +47,73 @@ const getLabelCheckbox = (sum: number, year: number) => {
   );
 };
 
-const EarlyPay: React.FC<Props> = ({ sum }: Props) => {
+const getShortDeductionList = (deductionList: number[], cb: (evt: React.MouseEvent) => void) => {
+  const preEndEl = deductionList.length - 2;
+  const endEl = deductionList.length - 1;
+
+  const arrIndex = [0, 1, 2, preEndEl, endEl];
+
+  const shortDeductionList = arrIndex.map((el) => {
+    if (el === 2) {
+      return (
+        <Checkbox
+          key={el}
+          isDisabled={false}
+          className={`early-pay__checkbox`}
+          onClick={cb}
+          prefix={`early-pay`}
+          type={`button`}
+        >
+          <span>...</span>
+        </Checkbox>
+      );
+    }
+
+    return (
+      <Checkbox
+        key={el}
+        isDisabled={false}
+        className={`early-pay__checkbox`}
+        prefix={`early-pay`}
+      >
+        {getLabelCheckbox(deductionList[el], el)}
+      </Checkbox>
+    );
+  });
+
+  return shortDeductionList;
+};
+
+const EarlyPay: React.FC<Props> = ({ deductionList }: Props) => {
+  const [isOpenList, setOpenList] = useState(false);
+
+  const isLongList = deductionList.length <= 5 || isOpenList;
+  const isShortList = deductionList.length > 5 && !isOpenList;
+
   return (
     <div className="early-pay">
       <label className="early-pay__label">
         Итого можете внести в качестве досрочных:
       </label>
-      <Checkbox
-        isDisabled={false}
-        className={`early-pay__checkbox`}
-        prefix={`early-pay`}
-      >
-        {getLabelCheckbox(sum, 1)}
-      </Checkbox>
+      {isLongList && (
+        deductionList.map((deduction, i) => {
+          return (
+            <Checkbox
+              key={`${deduction}-${i}`}
+              isDisabled={false}
+              className={`early-pay__checkbox`}
+              prefix={`early-pay`}
+            >
+              {getLabelCheckbox(deduction, i)}
+            </Checkbox>
+          );
+        })
+      )}
+      {isShortList && (
+        getShortDeductionList(deductionList, () => setOpenList(true))
+      )}
+
+      {/* setOpenList(false) */}
     </div>
   );
 };
