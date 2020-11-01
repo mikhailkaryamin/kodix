@@ -2,6 +2,7 @@
   "name": "kodix",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/test_task",
   "dependencies": {
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
