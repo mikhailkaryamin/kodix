@@ -17,14 +17,18 @@
 }
 
 .form-deduction__sum {
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 8px;
+  }
 }
 
 .form-deduction__container-decrease {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  padding-top: 8px;
+  padding-top: 12px;
 
   @media (min-width: $tablet-width) {
     flex-direction: row;
@@ -35,11 +39,11 @@
 }
 
 .form-deduction__group-buttons {
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-top: 16px;
+  padding-bottom: 40px;
 
   @media (min-width: $tablet-width) {
-    margin-left: auto;
+    margin-left: 32px;
     padding: 0;
     padding-right: 55px;
   }

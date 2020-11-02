@@ -48,12 +48,12 @@ const getLabelCheckbox = (deduction: number, year: number) => {
 };
 
 const getShortDeductionList = (deductionList: number[], cb: (evt: React.MouseEvent) => void) => {
-  const preEndEl = deductionList.length - 2;
-  const endEl = deductionList.length - 1;
+  const penultEl = deductionList.length - 2;
+  const lastEl = deductionList.length - 1;
 
-  const arrIndex = [0, 1, 2, preEndEl, endEl];
+  const indexes = [0, 1, 2, penultEl, lastEl];
 
-  const shortDeductionList = arrIndex.map((el) => {
+  const shortDeductionList = indexes.map((el) => {
     if (el === 2) {
       return (
         <Checkbox

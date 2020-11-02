@@ -8,7 +8,7 @@ const MAX_TAX_DEDUCTION = 260000;
 
 const emptyFunc = () => `Empty`;
 
-const getTaxDeductionList = (taxDeduction: number, rest: number, numberOfYear: number) => {
+const getDeductionList = (taxDeduction: number, rest: number, numberOfYear: number) => {
 
   const taxDeductionList = new Array(Math.round(numberOfYear)).fill(Math.round(taxDeduction));
 
@@ -33,7 +33,7 @@ const FormDeduction: React.FC = () => {
     const taxDeductionInYear = (salaryInMonth * 12) * 0.13;
     const rest = MAX_TAX_DEDUCTION % taxDeductionInYear;
     const numberOfYears = (MAX_TAX_DEDUCTION - rest) / taxDeductionInYear;
-    const taxDeductionList = getTaxDeductionList(taxDeductionInYear, rest, numberOfYears);
+    const taxDeductionList = getDeductionList(taxDeductionInYear, rest, numberOfYears);
 
     setDeductionList(taxDeductionList);
   };
