@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/test_task/static/css/main.824b00f0.chunk.css",
-    "main.js": "/test_task/static/js/main.00ed9137.chunk.js",
-    "main.js.map": "/test_task/static/js/main.00ed9137.chunk.js.map",
+    "main.css": "/test_task/static/css/main.5d3ce1a9.chunk.css",
+    "main.js": "/test_task/static/js/main.d027316b.chunk.js",
+    "main.js.map": "/test_task/static/js/main.d027316b.chunk.js.map",
     "runtime-main.js": "/test_task/static/js/runtime-main.d60f8db9.js",
     "runtime-main.js.map": "/test_task/static/js/runtime-main.d60f8db9.js.map",
     "static/js/2.be868685.chunk.js": "/test_task/static/js/2.be868685.chunk.js",
     "static/js/2.be868685.chunk.js.map": "/test_task/static/js/2.be868685.chunk.js.map",
     "index.html": "/test_task/index.html",
-    "static/css/main.824b00f0.chunk.css.map": "/test_task/static/css/main.824b00f0.chunk.css.map",
+    "static/css/main.5d3ce1a9.chunk.css.map": "/test_task/static/css/main.5d3ce1a9.chunk.css.map",
     "static/js/2.be868685.chunk.js.LICENSE.txt": "/test_task/static/js/2.be868685.chunk.js.LICENSE.txt",
     "static/media/index.scss": "/test_task/static/media/LabGrotesque-Regular.f45d8fdb.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.d60f8db9.js",
     "static/js/2.be868685.chunk.js",
-    "static/css/main.824b00f0.chunk.css",
-    "static/js/main.00ed9137.chunk.js"
+    "static/css/main.5d3ce1a9.chunk.css",
+    "static/js/main.d027316b.chunk.js"
   ]
 }
